@@ -6,6 +6,10 @@
 
 ---
 
+![Architecture](livrables/01_topologie_reseau/architecture.png)
+
+---
+
 ## Contexte
 
 Mise en place complète d'une infrastructure réseau sécurisée pour une PME de 80 employés répartis sur deux sites (siège + agence distante), simulée sous **GNS3**. Le projet couvre la conception, le déploiement et le durcissement de l'ensemble de l'infrastructure — du pare-feu périmétrique jusqu'aux mécanismes de surveillance et de réponse aux incidents.
@@ -138,18 +142,3 @@ cd elk && docker compose up -d
 | El Gorrim Mohamed | [@MedGm](https://github.com/MedGm) |
 | Kchibal Ismail | [@ismail745](https://github.com/ismail745) |
 | Junaid Uthman | [@JunaidUthman](https://github.com/JunaidUthman) |
-
----
-
-## Évaluation
-
-| Critère | Points |
-|---------|--------|
-| Topologie réseau documentée et justifiée | 3 pts |
-| Sécurisation réseau (pare-feu, DMZ, VLANs) | 3 pts |
-| Sécurisation serveur et services (SSH, HTTP, BDD) | 3 pts |
-| Gestion des comptes, droits et politique IAM | 3 pts |
-| Surveillance, journalisation et réponse aux incidents | 3 pts |
-| Script d'automatisation *(bonus)* | 2 pts |
-| Qualité du rapport | 3 pts |
-| **TOTAL** | **20 pts** |
