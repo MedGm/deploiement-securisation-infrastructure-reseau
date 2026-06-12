@@ -68,6 +68,9 @@ make_iso "bdd"      "192.168.10.30/24"  "192.168.10.1"  "srv-bdd"
 # Site Agence (example server)
 make_iso "agence"   "192.168.60.10/24"  "192.168.60.1"  "srv-agence"
 
+# VLAN 30 — Admin Linux client for SSH/MFA demo
+make_iso "adminlinux" "192.168.30.50/24" "192.168.30.1" "admin-linux"
+
 echo
 echo "All ISOs created in $ISO_DIR"
 echo "Root password for all servers: ${ROOT_PASS}"

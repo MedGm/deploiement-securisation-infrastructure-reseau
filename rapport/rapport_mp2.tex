@@ -231,7 +231,7 @@
 
     \vspace{0.6cm}
 
-    {\setlength{\fboxsep}{4pt}\setlength{\fboxrule}{0.4pt}\fbox{\includegraphics[width=0.75\linewidth,keepaspectratio]{screenshots/logo.png}}}
+    {\setlength{\fboxsep}{4pt}\setlength{\fboxrule}{0.4pt}\fbox{\includegraphics[width=0.65\linewidth,keepaspectratio]{screenshots/logo.png}}}
 
     \vspace{0.6cm}
 
@@ -297,7 +297,7 @@ L'ensemble du projet a ete realise dans GNS3 version 2.2, qui nous a permis d'ex
   \item Pare-feu pfSense CE 2.8.1 (siege et agence) avec segmentation VLAN et DMZ
   \item Tunnel VPN IPSec IKEv2 site-a-site siege~$\leftrightarrow$~agence
   \item Deux serveurs Debian 12 (AD-LDAP, Fichiers) + trois conteneurs Docker (MariaDB, nginx, SMTP)
-  \item Durcissement complet : SSH port 2222 + MFA TOTP, UFW, OpenLDAP, fail2ban, rkhunter, AIDE, sauvegardes GPG
+  \item Durcissement complet : SSH port 2222 + MFA TOTP, UFW, OpenLDAP, fail2ban, GPG saves
   \item IDS Suricata 7.0 sur pfSense avec regles ETOpen (bonus)
   \item Stack ELK 8.13 pour la centralisation et la visualisation des journaux (bonus)
 \end{itemize}
@@ -309,13 +309,13 @@ L'ensemble du projet a ete realise dans GNS3 version 2.2, qui nous a permis d'ex
 
 \subsection{Schema de conception de l'architecture}
 
-Avant toute implementation dans GNS3, nous avons concu un schema logique de l'infrastructure cible. Ce schema nous a servi de reference tout au long du projet pour verifier la coherence des flux et des zones de securite.
+Avant toute implementation dans GNS3, nous avons concu un schema logique de l'infrastructure cible. Ce schema nous a servi de reference du projet pour verifier la coherence des flux et des zones de securite.
 
 \fig{screenshots/architecture.png}{Schema de conception de l'architecture reseau -- etabli avant implementation dans GNS3}{fig:architecture-conception}
 
 \subsection{Architecture generale}
 
-Pour structurer notre infrastructure, nous avons opte pour un modele de securite en zones -- chaque zone etant isolee par pfSense et ne pouvant communiquer avec les autres que via des regles de filtrage explicites. Ce choix nous permet de limiter drastiquement la portee d'une compromission : si un poste employe est infecte, l'attaquant ne peut pas lateralement atteindre les serveurs internes ou la zone d'administration sans franchir plusieurs couches de filtrage.
+Pour structurer notre infrastructure, nous avons opte pour un modele de securite en zones -- chaque zone etant isolee par pfSense et ne pouvant communiquer avec les autres que via des regles de filtrage. Ce choix nous permet de limiter la portee d'une compromission : si un poste employe est infecte, l'attaquant ne peut pas atteindre les serveurs internes ou la zone d'administration sans franchir plusieurs couches de filtrage.
 
 \fig{screenshots/topology-gns3.png}{Topologie reseau complete dans GNS3}{fig:topo-gns3}
 

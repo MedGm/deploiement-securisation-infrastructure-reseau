@@ -50,7 +50,7 @@ PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 PasswordAuthentication no
 PermitEmptyPasswords no
-ChallengeResponseAuthentication yes
+KbdInteractiveAuthentication yes
 
 # MFA (Google Authenticator)
 AuthenticationMethods publickey,keyboard-interactive
@@ -268,7 +268,7 @@ EOF
 # PAM SSH with Google Authenticator
 cat > /etc/pam.d/sshd << 'EOF'
 auth required pam_google_authenticator.so nullok
-auth required pam_unix.so try_first_pass
+auth required pam_permit.so
 @include common-account
 @include common-session
 @include common-password
