@@ -8,6 +8,8 @@
 
 ![Architecture](livrables/01_topologie_reseau/architecture.png)
 
+🎥 **[Regarder la vidéo de démonstration sur YouTube](https://youtu.be/7SLDNtFu9aE)**
+
 ---
 
 ## Contexte
